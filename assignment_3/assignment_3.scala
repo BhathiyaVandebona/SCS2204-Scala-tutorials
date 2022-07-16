@@ -20,8 +20,8 @@ object assignment_3_q_2 {
 }
 
 object assignment_3_q_3 {
-  def cubeOf[T : Numeric](num: T) = num * num * num
-  def volumeOfASphere[T : Numeric](radius: T) = (4 * math.Pi * cubeOf(radius)) / 3
+  def cubeOf(num: Double) = num * num * num
+  def volumeOfASphere(radius: Double) = (4 * math.Pi * cubeOf(radius)) / 3
   def exec() = println("The volume of a the sphere with a radius of 5 is :: " + volumeOfASphere(5))
 }
 
@@ -43,8 +43,8 @@ object assignment_3_q_4 {
 }
 
 object assignment_3_q_5 {
-  val easyPaceKmPM = 1 / 8
-  val tempoPaceKmPM = 1 / 7
-  def totalRunningTime(distanceEasyPace: Double, distanceTempoPace: Double) = (distanceEasyPace / easyPaceKmPM) + (distanceTempoPace / tempoPaceKmPM)
+  val easyPaceMinPerKm = 8
+  val tempoPaceMinperKm = 7
+  def totalRunningTime(distanceEasyPaceKm: Double, distanceTempoPaceKm: Double) = (distanceEasyPaceKm * easyPaceMinPerKm) + (distanceTempoPaceKm * tempoPaceMinperKm)
   def exec() = println("Total running time is easy pace distance was 2 km and tempo pace distance was 3 km :: " + totalRunningTime(2, 3))
 }
