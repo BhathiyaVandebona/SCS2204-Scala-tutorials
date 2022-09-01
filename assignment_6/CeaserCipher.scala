@@ -71,8 +71,19 @@ object CeaserCipher {
     }
   }
 
+  // This function takes two arguments a string and a character to determine whether to encrypt
+  // or decrypt ('e' for encrypt and 'd' for decrypt)
+  def cipherFunction(text: String, state: Char): String = {
+    if (state == 'e') {
+      encryptPlainText(text.toLowerCase())
+    } else {
+      decryptCipherText(text.toLowerCase())
+    }
+  }
+
   def main(args: Array[String]): Unit = {
-    println(encryptPlainText("scala"))
-    println(decryptCipherText(encryptPlainText("scala")))
+    var text = cipherFunction("scala", 'e')
+    println(text)
+    println(cipherFunction(text, 'd'))
   }
 }
